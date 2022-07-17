@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import "./App.css";
+import JokesContainer from "./Components/JokesContainer/JokesContainer";
 
 class App extends Component {
   constructor() {
@@ -29,7 +31,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1>Joke Generator</h1>
-        <p>Hi!</p>
+        <JokesContainer jokes={this.state.jokes} />
       </main>
     );
   }
