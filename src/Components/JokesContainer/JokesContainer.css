@@ -1,0 +1,6 @@
+.jokes-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row wrap; 
+  gap: 1rem;
+}
