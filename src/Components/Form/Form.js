@@ -10,6 +10,24 @@ class Form extends Component {
     };
   }
 
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  submitJoke = (event) => {
+    event.preventDefault();
+    const newJoke = {
+      id: Date.now(),
+      ...this.state,
+    };
+    this.props.addJoke(newJoke);
+    this.clearInputs();
+  };
+
+  clearInputs = () => {
+    this.setState({ joke: "", punchline: "" });
+  };
+
   render() {
     return (
       <form>
@@ -18,6 +36,7 @@ class Form extends Component {
           placeholder="Joke"
           name="joke"
           value={this.state.joke}
+          onChange={(event) => this.handleChange(event)}
         />
 
         <input
@@ -25,9 +44,10 @@ class Form extends Component {
           placeholder="Punchline"
           name="punchline"
           value={this.state.punchline}
+          onChange={(event) => this.handleChange(event)}
         />
 
-        <button>SUBMIT</button>
+        <button onClick={(event) => this.submitJoke(event)}>SUBMIT</button>
       </form>
     );
   }

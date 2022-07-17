@@ -28,12 +28,16 @@ class App extends Component {
     };
   }
 
+  addJoke = (newJoke) => {
+    this.setState({ jokes: [...this.state.jokes, newJoke] });
+  };
+
   render() {
     return (
       <main className="App">
         <h1>Joke Generator</h1>
         {!this.state.jokes.length && <h2>No jokes yet -- add some!</h2>}
-        <Form />
+        <Form addJoke={this.addJoke} />
         <JokesContainer jokes={this.state.jokes} />
       </main>
     );
