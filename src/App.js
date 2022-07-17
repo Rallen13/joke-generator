@@ -1,9 +1,22 @@
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-   
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      jokes: [],
+    };
+  }
+
+  render() {
+    return (
+      <main className="App">
+        <h1>Joke Generator</h1>
+        <p>Hi!</p>
+      </main>
+    );
+  }
 }
 
 export default App;
