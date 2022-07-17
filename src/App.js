@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.css";
+import Form from "./Components/Form/Form";
 import JokesContainer from "./Components/JokesContainer/JokesContainer";
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
       <main className="App">
         <h1>Joke Generator</h1>
         {!this.state.jokes.length && <h2>No jokes yet -- add some!</h2>}
+        <Form />
         <JokesContainer jokes={this.state.jokes} />
       </main>
     );
